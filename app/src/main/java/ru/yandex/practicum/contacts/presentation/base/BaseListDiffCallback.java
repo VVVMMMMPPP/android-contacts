@@ -9,14 +9,9 @@ public class BaseListDiffCallback<T extends ListDiffInterface<T>> extends DiffUt
 
 
 
-
-    public boolean theSameAs(@NonNull T oldItem,@NonNull T newItem) {
-        return oldItem.hashCode() == newItem.hashCode();
-    }
-
     @Override
     public boolean areItemsTheSame(@NonNull T oldItem, @NonNull T newItem) {
-        return false;
+        return oldItem.theSameAs(newItem);
     }
 
 
